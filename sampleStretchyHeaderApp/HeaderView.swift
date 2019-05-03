@@ -10,6 +10,8 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
     
+    var animator: UIViewPropertyAnimator!
+    
     let imageView: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "blamtaku"))
         image.contentMode = .scaleAspectFill
@@ -21,10 +23,19 @@ class HeaderView: UICollectionReusableView {
         backgroundColor = .red
         addSubview(imageView)
         imageView.fillSuperView()
-        
+        setUpVisualEffectBlur()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("")
+    }
+    
+    private func setUpVisualEffectBlur() {
+        animator = UIViewPropertyAnimator(duration: 3.0, curve: .linear, animations: { [weak self] in
+            let blurEffect = UIBlurEffect(style: .regular)
+            let visualEffectView = UIVisualEffectView(effect: blurEffect)
+            self?.addSubview(visualEffectView)
+            visualEffectView.fillSuperView()
+        })
     }
 }
