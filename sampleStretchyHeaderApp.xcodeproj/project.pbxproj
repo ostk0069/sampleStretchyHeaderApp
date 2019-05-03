@@ -12,16 +12,22 @@
 		82C28A2F227C367700C37FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C28A2D227C367700C37FAD /* Main.storyboard */; };
 		82C28A31227C367800C37FAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C28A30227C367800C37FAD /* Assets.xcassets */; };
 		82C28A34227C367800C37FAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C28A32227C367800C37FAD /* LaunchScreen.storyboard */; };
+		82C28A3C227C3DB500C37FAD /* StretchyHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C28A3B227C3DB500C37FAD /* StretchyHeaderController.swift */; };
+		82C28A3E227C444200C37FAD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C28A3D227C444200C37FAD /* HeaderView.swift */; };
+		82C28A40227C4E3700C37FAD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C28A3F227C4E3700C37FAD /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82C28A26227C367700C37FAD /* sampleStretchyHeaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleStretchyHeaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		82C28A29227C367700C37FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82C28A2B227C367700C37FAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82C28A29227C367700C37FAD /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; };
+		82C28A2B227C367700C37FAD /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		82C28A2E227C367700C37FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82C28A30227C367800C37FAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C28A33227C367800C37FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82C28A35227C367800C37FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82C28A3B227C3DB500C37FAD /* StretchyHeaderController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = StretchyHeaderController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		82C28A3D227C444200C37FAD /* HeaderView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		82C28A3F227C4E3700C37FAD /* UIView+.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				82C28A30227C367800C37FAD /* Assets.xcassets */,
 				82C28A32227C367800C37FAD /* LaunchScreen.storyboard */,
 				82C28A35227C367800C37FAD /* Info.plist */,
+				82C28A3B227C3DB500C37FAD /* StretchyHeaderController.swift */,
+				82C28A3D227C444200C37FAD /* HeaderView.swift */,
+				82C28A3F227C4E3700C37FAD /* UIView+.swift */,
 			);
 			path = sampleStretchyHeaderApp;
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C28A3C227C3DB500C37FAD /* StretchyHeaderController.swift in Sources */,
 				82C28A2C227C367700C37FAD /* ViewController.swift in Sources */,
 				82C28A2A227C367700C37FAD /* AppDelegate.swift in Sources */,
+				82C28A3E227C444200C37FAD /* HeaderView.swift in Sources */,
+				82C28A40227C4E3700C37FAD /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
