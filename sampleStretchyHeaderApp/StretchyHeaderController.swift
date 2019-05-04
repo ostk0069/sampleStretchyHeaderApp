@@ -12,13 +12,11 @@ class StretchyHeaderController: UICollectionViewController {
     
     private let cellId = "cellId"
     private let headerId = "headerId"
-    private let padding: CGFloat = 16
     
     var headerView: HeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCollectionViewLayout()
         setUpCollectionView()
     }
     
@@ -27,18 +25,6 @@ class StretchyHeaderController: UICollectionViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
-    }
-    
-    private func setUpCollectionViewLayout() {
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.sectionInset = .init(
-                top: padding,
-                left: padding,
-                bottom: padding,
-                right: padding
-            )
-            layout.minimumLineSpacing = 12
-        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -70,7 +56,12 @@ class StretchyHeaderController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .blue
+        let imageView: UIImageView = {
+            let image = UIImageView(image: #imageLiteral(resourceName: "twitterSample"))
+            image.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130)
+            return image
+        }()
+        cell.addSubview(imageView)
         return cell
     }
 }
@@ -80,6 +71,6 @@ extension StretchyHeaderController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 2 * padding, height: 100)
+        return .init(width: view.frame.width, height: 120)
     }
 }
