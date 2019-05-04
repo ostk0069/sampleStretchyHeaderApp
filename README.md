@@ -2,7 +2,7 @@
 
 this is a sample app to make stretchy header like we see in large apps (ex. Twitter)
 
-![Alt Text](https://github.com/takumaosada/sampleStretchyHeaderApp/blob/master/sampleStretchyHeader2.gif)
+![Alt Text](https://github.com/takumaosada/sampleStretchyHeaderApp/blob/master/sampleStretchyHeader3.gif)
 
 ## Environment 
 
