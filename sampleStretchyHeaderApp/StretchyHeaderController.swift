@@ -8,10 +8,7 @@
 
 import UIKit
 
-class StretchyHeaderController: UICollectionViewController {
-    
-    private let cellId = "cellId"
-    private let headerId = "headerId"
+final class StretchyHeaderController: UICollectionViewController {
     
     var headerView: HeaderView?
     
@@ -21,10 +18,9 @@ class StretchyHeaderController: UICollectionViewController {
     }
     
     private func setUpCollectionView() {
-        collectionView.backgroundColor = .white
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -40,11 +36,9 @@ class StretchyHeaderController: UICollectionViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderView
-        return headerView!
-    }
+}
+
+extension StretchyHeaderController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: view.frame.width, height: 380)
@@ -54,8 +48,13 @@ class StretchyHeaderController: UICollectionViewController {
         return 18
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as? HeaderView
+        return headerView!
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         let imageView: UIImageView = {
             let image = UIImageView(image: #imageLiteral(resourceName: "twitterSample"))
             image.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130)
